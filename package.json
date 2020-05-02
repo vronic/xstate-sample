@@ -1,0 +1,61 @@
+{
+  "name": "xstate-sample",
+  "version": "1.0.0",
+  "description": "Awesome steps to learn xstate for State Machines",
+  "main": "index.js",
+  "scripts": {
+    "start": "DEBUG='*' NODE_ENV=development DEVELOPMENT=local tsnd --respawn --no-notify -r tsconfig-paths/register src/index.ts",
+    "debug": "DEBUG='*' NODE_ENV=development DEVELOPMENT=local tsnd --respawn --debug --inspect --transpileOnly -r tsconfig-paths/register -- src/index.ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "typecheck": "tsc --noEmit",
+    "upgrade-interactive": "npm-check --update",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vronic/xstate-sample.git"
+  },
+  "keywords": [
+    "state",
+    "machine",
+    "xstate"
+  ],
+  "author": "Slava Rogovoy <vronic.me@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/vronic/xstate-sample/issues"
+  },
+  "homepage": "https://github.com/vronic/xstate-sample#readme",
+  "dependencies": {
+    "typescript": "^3.8.3",
+    "xstate": "^4.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.4",
+    "husky": "^4.2.5",
+    "npm-check": "^5.9.2",
+    "prettier": "2.0.5",
+    "pretty-quick": "^2.0.1",
+    "ts-node": "^8.9.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "tsconfig-paths": "^3.9.0",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^9.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged --pattern '**/*.*(ts|tsx)'"
+    }
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.7.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "!win32"
+  ]
+}
